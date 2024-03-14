@@ -1,5 +1,5 @@
 import catchAsyncErrors from "./catchAsyncErrors.js";
-import ErrorHandler from "../utils/erorrHandler.js";
+import ErrorHandler from "../utils/errorHandler.js";
 import User from "../models/user.js";
 import jwt from "jsonwebtoken";
 
@@ -13,10 +13,6 @@ export const isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
 
   const decoded = jwt.verify(token, process.env.JWT_SECRET);
   req.user = await User.findById(decoded.id);
-
-  if (!req.user) {
-    return next(new ErrorHandler(`User not found id:${decoded.id}`, 404));
-  }
 
   next();
 });

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 import StarRatings from "react-star-ratings";
 
-const ProductItem = ({ product,columnSize }) => {
+const ProductItem = ({ product, columnSize }) => {
   return (
     <div className={`col-sm-12 col-md-6 col-lg-${columnSize} my-3`}>
       <div className="card p-3 rounded">
-      <img
+        <img
           className="card-img-top mx-auto"
           src={
             product?.images[0]
@@ -34,7 +34,7 @@ const ProductItem = ({ product,columnSize }) => {
               ({product?.numOfReviews})
             </span>
           </div>
-          <p className="card-text mt-2">Rs {product?.price}</p>
+          <p className="card-text mt-2">${product?.price}</p>
           <Link
             to={`/product/${product?._id}`}
             id="view_btn"

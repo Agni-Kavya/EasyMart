@@ -11,7 +11,6 @@ const CustomPagination = ({ resPerPage, filteredProductsCount }) => {
   const page = Number(searchParams.get("page")) || 1;
 
   useEffect(() => {
-    // console.log(filteredProductsCount, resPerPage);
     setCurrentPage(page);
   }, [page]);
 
@@ -44,9 +43,7 @@ const CustomPagination = ({ resPerPage, filteredProductsCount }) => {
           linkClass="page-link"
         />
       )}
-     
     </div>
-    
   );
 };
 

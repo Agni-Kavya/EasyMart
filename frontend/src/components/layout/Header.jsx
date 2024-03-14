@@ -1,23 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Search from "./Search";
 import { useGetMeQuery } from "../../redux/api/userApi";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useLazyLogoutQuery } from "../../redux/api/authApi";
+import toast from "react-hot-toast";
 
 const Header = () => {
   const navigate = useNavigate();
 
   const { isLoading } = useGetMeQuery();
-  const [logout] = useLazyLogoutQuery();
-
+  const [logout, { isSuccess }] = useLazyLogoutQuery();
+ 
   const { user } = useSelector((state) => state.auth);
 
-  const logoutHandler = () => {
-    logout();
+  useEffect(() => {
+    if (isSuccess)
+     navigate(0); // refresh page
+  }, [isSuccess]);
+
+  const logoutHandler = async () => {
+    await logout();
     navigate(0);
   };
-
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("Logged out successfully");
+      navigate(0)
+    }
+  }, [isSuccess]);
   return (
     <nav className="navbar row">
       <div className="col-12 col-md-3 ps-5">

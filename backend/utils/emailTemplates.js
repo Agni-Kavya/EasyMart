@@ -448,10 +448,10 @@ export const getResetPasswordTemplate = (username, resetUrl) => `
             <tr>
               <td class="email-masthead">
                 <a
-                  href="https://easymart.com"
+                  href="https://shopit.com"
                   class="f-fallback email-masthead_name"
                 >
-                  EasyMart
+                  ShopIT
                 </a>
               </td>
             </tr>
@@ -477,7 +477,7 @@ export const getResetPasswordTemplate = (username, resetUrl) => `
                         <h1>Hi ${username},</h1>
                         <p>
                           You recently requested to reset your password for your
-                          EasyMart account. Use the button below to reset it.
+                          ShopIT account. Use the button below to reset it.
                           <strong
                             >This password reset is only valid for the next 30
                             minutes.</strong
@@ -521,7 +521,7 @@ export const getResetPasswordTemplate = (username, resetUrl) => `
                           <a href="{{support_url}}">contact support</a> if you
                           have questions.
                         </p>
-                        <p>Thanks, <br />The EasyMart team</p>
+                        <p>Thanks, <br />The ShopIT team</p>
 
                         <table class="body-sub" role="presentation">
                           <tr>
@@ -556,7 +556,7 @@ export const getResetPasswordTemplate = (username, resetUrl) => `
                   <tr>
                     <td class="content-cell" align="center">
                       <p class="f-fallback sub align-center">
-                        EasyMart
+                        ShopIT
                         <br />1234 Street Rd. <br />Suite 1234
                       </p>
                     </td>
